@@ -13,22 +13,14 @@ def dojo():
     return "Dojo"
 
 
-@app.route("/say/<name>")
+@app.route("/say/<string:name>")
 def hi(name):
     return f"Hi " + name
 
 
-@app.route("/repeat/<int:num>/<word>")
+@app.route("/repeat/<int:num>/<string:word>")
 def repeat(num, word):
     return f"{word} " * num
-
-
-# def hi_michael(Michael):
-#     return f"Hi {Michael}"
-
-
-# def hi_John(John):
-#     return f"Hi {John}"
 
 
 if __name__ == "__main__":
