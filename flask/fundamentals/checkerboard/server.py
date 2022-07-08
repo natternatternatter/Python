@@ -4,20 +4,19 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def eight_by_eight():
+def eight_by_eight(x=4, y=4):
 
-    return render_template("index.html", y=4, x=4)
+    return render_template("index.html", y=y, x=x)
 
 
 @app.route("/<int:x>")
-def eight_by_four(x):
-    x = x/2
-    return render_template("index.html", x=x)
+def eight_by_four(x=4):
+    return render_template("index.html", x=x, y=2)
 
 
-# @app.route("/<int:x>/<int:y>")
-# def index(x, y):
-#     return render_template("index.html", x=x, y=y)
+@app.route("/<float:x>/<float:y>")
+def index(x, y):
+    return render_template("index.html", x=x, y=y)
 
 
 if __name__ == "__main__":
