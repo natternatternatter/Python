@@ -5,28 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dojo Survey</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
 
 </head>
 
 <body>
-    <form action="/get_info" method="POST">
-        <input type="text" name="name">Name
-        <select name="location" id="">Dojo Location
-            <option value="San Jose">San Jose</option>
-            <option value="Seattle">Seattle</option>
-            <option value="Los Angeles">Los Angeles</option>
-        </select>
-        <select name="language" id="">Favorite Language
-            <option value="HTML">HTML</option>
-            <option value="CSS">CSS</option>
-            <option value="Javascript">Javascript</option>
-            <option value="Python">Python</option>
-        </select>
-        <textarea name="comment" id="" cols="30" rows="10">Comment(optional):</textarea>
-    </form>
-    
+    <div class="container-fluid bg-success p-2 text-dark bg-opacity-10 d-flex mx-1 mt-2 justify-content-center">
+
+        <form action="/get_info" method="POST">
+            <h1 class="display-2 text-center">Dojo Survey</h1>
+    <!-- first and last name inputs -->
+
+            <div class="row mb-3 mt-5 mx-2 shadow-lg p-3 mb-5 bg-body rounded">
+                <div class="col">
+                <input name="first_name" type="text" class="form-control" placeholder="First name" aria-label="First name">
+                </div>
+                <div class="col">
+                <input name="last_name" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                </div>
+            </div>
+
+    <!-- location and language inputs -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group mb-3 shadow-lg p-3 mb-5 bg-body rounded">
+                            <label class="input-group-text bg-success p-2 text-dark bg-opacity-50" for="inputGroupSelect01">Dojo Location</label>
+                            <select name="location" class="form-select" id="inputGroupSelect01">
+                                <option selected>Choose...</option>
+                                <option value="San Jose">San Jose</option>
+                                <option value="Seattle">Seattle</option>
+                                <option value="Los Angeles">Los Angeles</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3 shadow-lg p-3 mb-5 bg-body rounded">
+                            <label class="input-group-text bg-success p-2 text-dark bg-opacity-50" for="inputGroupSelect01">Favorite Language</label>
+                            <select name="language" class="form-select" id="inputGroupSelect02">
+                            <option selected>Choose...</option>
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="Javascript">Javascript</option>
+                            <option value="Python">Python</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- optional comment text area -->
+
+            <div class="form-floating mx-5 mb-3 shadow-lg p-3 mb-5 bg-body rounded bg-success p-2 text-dark bg-opacity-10">
+                <textarea name="comment" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Comments (optional)</label>
+            </div>
+
+            <!-- submit button -->
+
+            <div class="d-grid gap-2">
+                <button class="btn btn-outline-dark btn-lg" type="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>

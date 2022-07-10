@@ -11,6 +11,11 @@ def index():
 
 @app.route("/get_info", methods=["POST"])
 def get_info():
+    session["first_name"] = request.form["first_name"]
+    session["last_name"] = request.form["last_name"]
+    session["location"] = request.form["location"]
+    session["language"] = request.form["language"]
+    session["comment"] = request.form["comment"]
     return redirect("/user_confirmation")
 
 
